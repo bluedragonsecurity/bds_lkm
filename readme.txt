@@ -18,6 +18,7 @@ Features :
 - hide bind shell and reverse shell process
 - rootkit persistence to survice after reboot
 - hide from lsmod
+- clean logs and bash history during installation
 
 =====INSTALLATION=====
 
