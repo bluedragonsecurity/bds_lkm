@@ -1,7 +1,16 @@
 <h2>BDS LKM ROOTKIT</h2>
 <p>
 Linux Loadable Kernel Module Rootkit for x64 Linux Kernel 5.x and 6.x.
+
 <br>
+Developed by : Antonius 
+<br>
+Website : www.bluedragonsec.com
+<br>
+github : https://github.com/bluedragonsecurity
+<br>
+https://twitter.com/bluedragonsec
+<br>  
 Features : 
 <ul>
   <li>hide files and directories with prefix bds_</li>
@@ -11,14 +20,7 @@ Features :
   <li>hide bind shell and reverse shell port from netstat</li>
   <li>hide bind shell and reverse shell process</li>
   <li>rootkit persistence to survice after reboot</li>
-<br>
-Developed by : Antonius 
-<br>
-Website : www.bluedragonsec.com
-<br>
-github : https://github.com/bluedragonsecurity
-<br>
-https://twitter.com/bluedragonsec
+
 </p>
 <h3>Installation</h3>
 <p>
