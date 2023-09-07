@@ -22,6 +22,8 @@ Features :
   <li>hide bind shell and reverse shell process</li>
   <li>rootkit persistence to survice after reboot</li>
   <li>hide from lsmod</li>
+  <li>Clean logs and bash history</li>
+  
 </p>
 <h3>Installation</h3>
 <p>
