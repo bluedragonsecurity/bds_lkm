@@ -83,5 +83,5 @@ nc server ip 31337
 <p>
 <b>Hiding Files and Directories</b>
 <br>
-To hide file and directory just give prefix bds_ to file name and directory
+To hide file and directory just give prefix bds_ to file name and directory name
 </p>
