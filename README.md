@@ -1,6 +1,6 @@
 <h2>BDS LKM ROOTKIT</h2>
 <p>
-Linux Loadable Kernel Module Rootkit for x64 Linux Kernel 5.x and 6.x.
+Linux Loadable Kernel Module Rootkit for Linux Kernel 5.x and 6.x on x86_64.
 
 <br>
 Developed by : Antonius 
@@ -85,3 +85,10 @@ nc server ip 31337
 <br>
 To hide file and directory just give prefix bds_ to file name and directory name
 </p>
+<p>
+<b>Persistence</b>
+<br>
+  The rootkit is activated every time the system starts up. After the reboot, wait for 1 minute, the rootkit will be loaded into kernel.
+</p>
+
+
