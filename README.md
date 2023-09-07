@@ -4,7 +4,7 @@ Linux Loadable Kernel Module Rootkit for x64 Linux Kernel 5.x and 6.x.
 <br>
 Features : 
 <ul>
-  <li>hide files and directories with prefix _bds</li>
+  <li>hide files and directories with prefix bds_</li>
   <li>port knocking bind shell</li>
   <li>port knocking reverse shell</li>
   <li>privilege escalation using kill 000 command</li>
@@ -64,7 +64,7 @@ nc server ip 1337
 </pre>  
 Wait a few seconds and you will get reverse shell port connection from your target server   
 </p>
-
+<p>
 <b>Activating Bind Shell</b>
 <br>
 To activate bind shell, you need to do port knocking to your target server (with rootkit installed) on port 1338.
@@ -78,4 +78,8 @@ Wait a few seconds then type:
 nc server ip 31337
 </pre>
 </p>
-
+<p>
+<b>Hiding Files and Directories</b>
+<br>
+To hide file and directory just give prefix bds_ to file name and directory
+</p>
