@@ -2,11 +2,12 @@
 reverse shell for bds lkm rootkit
 
 developed by : Antonius (Antonius Robotsoft)
-Website ; www.bluedragonsec.com
+
+website : www.bluedragonsec.com
 
 github : https://github.com/bluedragonsecurity
 
-https://twitter.com/bluedragonsec
+twitter : https://twitter.com/bluedragonsec
 
 Simple Stable LKM Rootkit for linux kernel 5.x and 6.x
 to install rootkit, read bds_readme.pdf
