@@ -62,7 +62,7 @@ Open another terminal tab and do port knocking to target server :
 <pre>
 nc server ip 1337
 </pre>  
-Wait a few seconds and you will get reverse shell port connection from your target server   
+Wait a few seconds and you will get reverse shell port connection from your target server.
 </p>
 <p>
 <b>Activating Bind Shell</b>
