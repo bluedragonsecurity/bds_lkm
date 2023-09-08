@@ -10,7 +10,7 @@ github : https://github.com/bluedragonsecurity
 twitter : https://twitter.com/bluedragonsec
 
 Simple Stable LKM Rootkit for linux kernel 5.x and 6.x
-to install rootkit, read bds_readme.pdf
+to install rootkit, read readme.txt
 
 Warning!! This rootkit is for educational purpouse only! I am not       
 responsible to anything you do with this !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*
