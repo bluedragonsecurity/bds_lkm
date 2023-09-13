@@ -25,7 +25,7 @@ This lkm rootkit works on x64 architecture only.
   <li>rootkit persistence to survive after reboot</li>
   <li>hide module</li>
   <li>clean logs and bash history during installation</li>
-  
+</ul>
 </p>
 <h3>Installation</h3>
 <p>
