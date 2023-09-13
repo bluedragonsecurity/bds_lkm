@@ -11,8 +11,10 @@ Github : https://github.com/bluedragonsecurity
 Twitter : https://twitter.com/bluedragonsec
 <br>  
 This lkm rootkit works on x64 architecture only.
-<br>
-Features : 
+</p>
+
+<p>
+<h3>Features</h3> 
 <ul>
   <li>hide files and directories with prefix bds_</li>
   <li>port knocking bind shell (bind shell password is bluedragonsec)</li>
