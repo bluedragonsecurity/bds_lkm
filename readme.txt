@@ -5,7 +5,6 @@ Linux Loadable Kernel Module Rootkit for Linux Kernel 5.x and 6.x on x86_64.
 Developed by : Antonius
 Website : www.bluedragonsec.com
 Github : https://github.com/bluedragonsecurity
-Twitter : https://twitter.com/bluedragonsec
 
 This lkm rootkit works on x64 architecture only.
 
