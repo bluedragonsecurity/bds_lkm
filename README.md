@@ -8,8 +8,6 @@ Website : www.bluedragonsec.com
 <br>
 Github : https://github.com/bluedragonsecurity
 <br>
-Twitter : https://twitter.com/bluedragonsec
-<br>  
 This lkm rootkit works on x64 architecture only.
 </p>
 
