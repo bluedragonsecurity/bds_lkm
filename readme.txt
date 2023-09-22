@@ -10,14 +10,14 @@ This lkm rootkit works on x64 architecture only.
 
 =====FEATURES=====
 
-- hide files and directories with prefix bds_
+- hides files and directories with prefix bds_
 - port knocking bind shell (bind shell password is : bluedragonsec)
 - port knocking reverse shell
 - privilege escalation using kill 000 command
-- hide bind shell and reverse shell port from netstat
-- hide bind shell and reverse shell process
+- hides bind shell and reverse shell port from netstat
+- hides bind shell and reverse shell process
 - rootkit persistence to survive after reboot
-- hide module
+- hides module
 - clean logs and bash history during installation
 
 =====INSTALLATION=====
