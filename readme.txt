@@ -18,7 +18,7 @@ This lkm rootkit works on x64 architecture only.
 - hides bind shell and reverse shell process
 - rootkit persistence to survive after reboot
 - hides module
-- clean logs and bash history during installation
+- cleans logs and bash history during installation
 
 =====INSTALLATION=====
 You need root privilege for installing this rootkit.
