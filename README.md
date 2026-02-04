@@ -1,6 +1,6 @@
 <h2>BDS LKM ROOTKIT</h2>
 <p>
-Linux Loadable Kernel Module Rootkit for Linux Kernel 5.x and 6.x on x86_64.
+Linux Loadable Kernel Module Rootkit for Linux Kernel 5.x up to linux kernel 6.2 on x86_64.
 <br>
 Developed by : Antonius (wisdom)
 <br>
